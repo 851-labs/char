@@ -5,7 +5,7 @@
 </div>
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Swift-5.10-orange.svg" alt="Swift 5.10">
+  <img src="https://img.shields.io/badge/Swift-6.2-orange.svg" alt="Swift 6.2">
   <a href="https://www.apple.com/ios/">
     <img src="https://img.shields.io/badge/macOS-26.0%2B-blue.svg" alt="macOS 12.0+">
   </a>
