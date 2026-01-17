@@ -19,11 +19,14 @@ jobs:
           sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
           xcodebuild -version
 
+      - name: Create keychain password
+        run: |
+          echo "KEYCHAIN_PASSWORD=$(openssl rand -hex 12)" >> "$GITHUB_ENV"
+
       - name: Import signing certificate
         env:
           DEV_ID_CERT_P12: ${{ secrets.DEV_ID_CERT_P12 }}
           DEV_ID_CERT_PASSWORD: ${{ secrets.DEV_ID_CERT_PASSWORD }}
-          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
         run: |
           echo "$DEV_ID_CERT_P12" | base64 --decode > signing-cert.p12
           security create-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
