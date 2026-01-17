@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   release:
-    runs-on: macos-26-arm64
+    runs-on: [self-hosted, macOS, macos-26]
 
     steps:
       - name: Checkout
@@ -18,8 +18,12 @@ jobs:
 
       - name: Select Xcode
         run: |
-          XCODE_PATH=$(ls -d /Applications/Xcode*.app | sort | tail -1)
-          sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          if [[ -n "${XCODE_PATH:-}" ]]; then
+            sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          else
+            XCODE_PATH=$(ls -d /Applications/Xcode*.app | sort | tail -1)
+            sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
+          fi
           xcodebuild -version
 
       - name: Create keychain password
@@ -42,7 +46,9 @@ jobs:
 
       - name: Set up Sparkle tools
         run: |
-          brew install sparkle
+          if ! command -v generate_appcast >/dev/null; then
+            brew install sparkle
+          fi
 
       - name: Set up Bun
         uses: oven-sh/setup-bun@v1
