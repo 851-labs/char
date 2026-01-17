@@ -20,8 +20,10 @@ struct charApp: App {
     .commands {
       InspectorCommands()
       CommandGroup(after: .appInfo) {
-        Button("Check for Updates…") {
+        Button {
           updaterController.checkForUpdates(nil)
+        } label: {
+          Label("Check for Updates…", systemImage: "square.and.arrow.down")
         }
       }
     }
