@@ -109,7 +109,6 @@ struct StatsPresentation: ViewModifier {
             }
           }
 
-          ToolbarSpacer()
           ToolbarItem(placement: .confirmationAction) {
             if shouldShowDoneButton {
               Button {
@@ -198,7 +197,6 @@ struct StatsPresentation: ViewModifier {
         }
       }
     }
-    .labelReservedIconWidth(16)
   }
 
   // MARK: - Text Actions
