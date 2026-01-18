@@ -258,7 +258,7 @@ const main = async () => {
     try {
       const signResult = run(signUpdate, ["-f", sparkleKeyPath, dmgPath]);
       await cp(dmgPath, path.join(releaseDir, dmgName));
-      run(generateAppcast, ["-o", path.join(releaseDir, "appcast.xml"), releaseDir]);
+      run(generateAppcast, ["--ed-key-file", sparkleKeyPath, "-o", path.join(releaseDir, "appcast.xml"), releaseDir]);
       const signature = signResult.stdout ? new TextDecoder().decode(signResult.stdout).trim() : "";
       if (signature) {
         console.log(`Signature: ${signature}`);
