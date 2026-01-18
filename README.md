@@ -19,7 +19,7 @@
 
 ### Direct Download
 
-Download char and drag it to your Applications folder.
+Download [the latest release](https://github.com/851-labs/char/releases/latest) and drag it to your Applications folder.
 
 ### Homebrew
 
