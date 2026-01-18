@@ -1,7 +1,7 @@
 <div align="center">
   <img width="180" height="180" src="char/Resources/RasterIcon.png" alt="logo">
   <h1><b>char</b></h1>
-  <p>Minimal writing tool that gives you live stats for characters, words, sentences, reading time, and more. Fully native, optimized for speed, and private by design — your data never leaves your device.</p>
+  <p>Minimal writing tool with live stats for characters, words, and more.<br>Native, optimized for speed, and private by design.</p>
 </div>
 
 <div align="center">
