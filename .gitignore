@@ -74,6 +74,9 @@ playground.xcworkspace
 # hence it is not needed unless you have added a package configuration file to your project
 # .swiftpm
 
+# Workspace shared data
+char.xcodeproj/project.xcworkspace/xcshareddata/
+
 .build/
 
 # CocoaPods
