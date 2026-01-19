@@ -37,7 +37,22 @@ Update versions in `char.xcodeproj/project.pbxproj`:
 
 Commit the version bump.
 
-### 3) Create Tag
+### 3) Update Changelog
+
+Add the release notes to `CHANGELOG.md` under a new version heading.
+
+To see commits since the previous tag:
+
+```
+git log $(git describe --tags --abbrev=0)..HEAD --oneline
+```
+
+```
+git add CHANGELOG.md
+git commit -m "docs: update changelog for x.y.z"
+```
+
+### 4) Create Tag
 
 ```
 git tag v1.0.9
@@ -46,7 +61,7 @@ git push origin v1.0.9
 
 This triggers the Release workflow.
 
-### 4) Verify CI
+### 5) Verify CI
 
 Use GitHub CLI to confirm CI completion:
 
@@ -61,7 +76,7 @@ If it fails, inspect logs:
 gh run view <RUN_ID> --log
 ```
 
-### 5) Verify Release Assets
+### 6) Verify Release Assets
 
 ```
 gh release view v1.0.9 --json url,assets
@@ -71,7 +86,7 @@ Ensure the release has:
 - `char.dmg`
 - `appcast.xml`
 
-### 6) Update Homebrew Tap
+### 7) Update Homebrew Tap
 
 Update `851-labs/homebrew-tap` with the new version and SHA256:
 
@@ -95,11 +110,19 @@ git commit -m "bump char to 1.0.9"
 git push
 ```
 
-### 7) Validate Install
+### 8) Validate Install
 
 ```
 brew update
 brew upgrade --cask 851-labs/tap/char
+```
+
+### 9) Local Release (Fastlane)
+
+If you need a local release build, run:
+
+```
+bundle exec fastlane release
 ```
 
 ## Sparkle Feed
