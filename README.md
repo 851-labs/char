@@ -9,6 +9,9 @@
     <img src="https://img.shields.io/badge/macOS-26.0%2B-blue?logo=apple&logoColor=white&style=flat" alt="macOS 26.0+">
   </a>
   <img src="https://img.shields.io/badge/Swift-6.2-f05138?logo=swift&logoColor=white&style=flat" alt="Swift 6.2">
+  <a href="https://github.com/851-labs/char/releases/latest">
+    <img src="https://img.shields.io/github/v/release/851-labs/char?label=Release&style=flat" alt="Latest Release">
+  </a>
   <a href="https://github.com/851-labs/homebrew-tap">
     <img src="https://img.shields.io/badge/Homebrew-851--labs%2Ftap-fbb040?logo=homebrew&logoColor=white&style=flat" alt="Homebrew tap">
   </a>
