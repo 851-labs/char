@@ -4,7 +4,7 @@
   <p>Minimal writing tool with live stats for characters, words, and more.<br>Native, optimized for speed, and private by design.</p>
 </div>
 
-<div align="center">
+<div align="center" style="max-width: 720px; margin: 0 auto;">
   <a href="https://github.com/851-labs/char/releases/latest">
     <img src="https://img.shields.io/badge/macOS-26.0%2B-blue?logo=apple&logoColor=white&style=flat" alt="macOS 26.0+">
   </a>
