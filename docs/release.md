@@ -14,10 +14,10 @@ This document outlines how to ship a new macOS release for char, including Spark
 Create `.env` from `.env.example`:
 
 ```
-DEV_ID_APPLICATION="Developer ID Application: Your Name (TEAMID)"
-AC_API_KEY_ID="YOUR_KEY_ID"
-AC_API_ISSUER_ID="YOUR_ISSUER_ID"
-AC_API_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
+DEVELOPER_ID_APPLICATION="Developer ID Application: Your Name (TEAMID)"
+APP_STORE_CONNECT_KEY_ID="YOUR_KEY_ID"
+APP_STORE_CONNECT_ISSUER_ID="YOUR_ISSUER_ID"
+APP_STORE_CONNECT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
 SPARKLE_PRIVATE_KEY="BASE64_KEY_FROM_SPARKLE_KEYCHAIN_ITEM_WITH_PADDING"
 ```
 
@@ -26,6 +26,7 @@ SPARKLE_PRIVATE_KEY="BASE64_KEY_FROM_SPARKLE_KEYCHAIN_ITEM_WITH_PADDING"
 ### 1) Confirm Xcode + SDK
 
 - Ensure your machine is running macOS 26 and Xcode 17+.
+- Install `appdrop`: `brew install 851-labs/tap/appdrop`.
 - CI currently uses `runs-on: macos-26`. If you bump Xcode locally, ensure the build still targets macOS 26.
 
 ### 2) Bump Version
@@ -108,6 +109,12 @@ Commit and push:
 git add Casks/char.rb
 git commit -m "bump char to 1.0.9"
 git push
+```
+
+### 8) Local Release (appdrop)
+
+```
+appdrop release
 ```
 
 ### 8) Validate Install
