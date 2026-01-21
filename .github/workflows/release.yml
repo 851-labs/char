@@ -10,7 +10,15 @@ permissions:
 
 jobs:
   release:
-    runs-on: macos-26
+    name: Release (${{ matrix.name }})
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        include:
+          - name: github
+            runner: macos-26
+          - name: claudl
+            runner: [self-hosted, macOS, ARM64, claudl]
 
     steps:
       - name: Checkout
@@ -39,6 +47,7 @@ jobs:
           appdrop release --verbose
 
       - name: Publish GitHub release
+        if: ${{ matrix.name == 'github' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
