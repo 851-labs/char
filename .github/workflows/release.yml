@@ -25,7 +25,7 @@ jobs:
           DEVELOPER_ID_CERT_P12: ${{ secrets.DEVELOPER_ID_CERT_P12 }}
           DEVELOPER_ID_CERT_PASSWORD: ${{ secrets.DEVELOPER_ID_CERT_PASSWORD }}
         run: |
-          appdrop setup-ci --write-github-env --install-sparkle
+          appdrop setup-ci
 
       - name: Run appdrop release
         env:
