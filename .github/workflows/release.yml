@@ -16,43 +16,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode
+      - name: Install appdrop
         run: |
-          if [[ -n "${XCODE_PATH:-}" ]]; then
-            sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
-          else
-            XCODE_PATH=$(ls -d /Applications/Xcode*.app | sort | tail -1)
-            sudo xcode-select -s "$XCODE_PATH/Contents/Developer"
-          fi
-          xcodebuild -version
+          brew install 851-labs/tap/appdrop
 
-      - name: Create keychain password
-        run: |
-          echo "KEYCHAIN_PASSWORD=$(openssl rand -hex 12)" >> "$GITHUB_ENV"
-
-      - name: Import signing certificate
+      - name: Set up CI signing environment
         env:
           DEVELOPER_ID_CERT_P12: ${{ secrets.DEVELOPER_ID_CERT_P12 }}
           DEVELOPER_ID_CERT_PASSWORD: ${{ secrets.DEVELOPER_ID_CERT_PASSWORD }}
         run: |
-          echo "$DEVELOPER_ID_CERT_P12" | base64 --decode > signing-cert.p12
-          security create-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
-          security set-keychain-settings -lut 21600 build.keychain
-          security unlock-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
-          security import signing-cert.p12 -k build.keychain -P "$DEVELOPER_ID_CERT_PASSWORD" -T /usr/bin/codesign -T /usr/bin/security
-          security list-keychains -d user -s build.keychain
-          security set-key-partition-list -S apple-tool:,apple: -k "$KEYCHAIN_PASSWORD" build.keychain
-          rm -f signing-cert.p12
+          appdrop setup-ci --write-github-env
 
       - name: Set up Sparkle tools
         run: |
           if ! command -v generate_appcast >/dev/null; then
             brew install sparkle
           fi
-
-      - name: Install appdrop
-        run: |
-          brew install 851-labs/tap/appdrop
 
       - name: Run appdrop release
         env:
