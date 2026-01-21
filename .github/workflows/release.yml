@@ -46,6 +46,7 @@ jobs:
           SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
         run: |
           if [ "${{ matrix.name }}" = "claudl" ]; then
+            rm -rf build
             appdrop release --verbose --no-notarize
           else
             appdrop release --verbose
