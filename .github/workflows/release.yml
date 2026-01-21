@@ -47,7 +47,7 @@ jobs:
         run: |
           if [ "${{ matrix.name }}" = "claudl" ]; then
             rm -rf build
-            appdrop release --verbose --no-notarize
+            appdrop release --verbose --no-notarize --no-sparkle
           else
             appdrop release --verbose
           fi
