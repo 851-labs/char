@@ -21,6 +21,8 @@ APP_STORE_CONNECT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVAT
 SPARKLE_PRIVATE_KEY="BASE64_KEY_FROM_SPARKLE_KEYCHAIN_ITEM_WITH_PADDING"
 ```
 
+appdrop automatically loads `.env` from the repo root.
+
 ## Release Steps
 
 ### 1) Confirm Xcode + SDK
@@ -114,7 +116,7 @@ git push
 ### 8) Local Release (appdrop)
 
 ```
-appdrop release
+appdrop release --verbose --no-input
 ```
 
 ### 9) Validate Install
@@ -122,6 +124,35 @@ appdrop release
 ```
 brew update
 brew upgrade --cask 851-labs/tap/char
+```
+
+## Troubleshooting
+
+### Notarization delays
+
+Notarization can take 10-45 minutes depending on Apple queue load. appdrop prints submission IDs, and you can query them:
+
+```
+xcrun notarytool info <submission-id> \
+  --key <AuthKey.p8> \
+  --key-id <KEY_ID> \
+  --issuer <ISSUER_ID> \
+  --output-format json
+```
+
+Fetch the detailed log:
+
+```
+xcrun notarytool log <submission-id> \
+  --key <AuthKey.p8> \
+  --key-id <KEY_ID> \
+  --issuer <ISSUER_ID>
+```
+
+For faster local iteration, you can skip notarization:
+
+```
+appdrop release --no-notarize
 ```
 
 ## Sparkle Feed
