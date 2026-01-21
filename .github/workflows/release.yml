@@ -45,7 +45,11 @@ jobs:
           APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
           SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
         run: |
-          appdrop release --verbose
+          if [ "${{ matrix.name }}" = "claudl" ]; then
+            appdrop release --verbose --no-notarize
+          else
+            appdrop release --verbose
+          fi
 
       - name: Publish GitHub release
         if: ${{ matrix.name == 'github' }}
