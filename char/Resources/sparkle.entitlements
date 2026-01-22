@@ -13,5 +13,10 @@
     <string>$(PRODUCT_BUNDLE_IDENTIFIER)-spks</string>
     <string>$(PRODUCT_BUNDLE_IDENTIFIER)-spki</string>
   </array>
+  <key>com.apple.security.temporary-exception.authorization</key>
+  <array>
+    <string>config.add.$(PRODUCT_BUNDLE_IDENTIFIER).sparkle2-auth</string>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER).sparkle2-auth</string>
+  </array>
 </dict>
 </plist>
