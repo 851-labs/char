@@ -34,6 +34,7 @@ jobs:
           DEVELOPER_ID_CERT_P12: ${{ secrets.DEVELOPER_ID_CERT_P12 }}
           DEVELOPER_ID_CERT_PASSWORD: ${{ secrets.DEVELOPER_ID_CERT_PASSWORD }}
           SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
+          DEVELOPER_ID_APPLICATION: ${{ secrets.DEVELOPER_ID_APPLICATION }}
         run: |
           appdrop setup-ci
 
@@ -45,12 +46,7 @@ jobs:
           APP_STORE_CONNECT_PRIVATE_KEY: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
           SPARKLE_PRIVATE_KEY: ${{ secrets.SPARKLE_PRIVATE_KEY }}
         run: |
-          if [ "${{ matrix.name }}" = "claudl" ]; then
-            rm -rf build
-            appdrop release --verbose --no-notarize --no-sparkle
-          else
-            appdrop release --verbose
-          fi
+          appdrop release --verbose
 
       - name: Publish GitHub release
         if: ${{ matrix.name == 'github' }}
