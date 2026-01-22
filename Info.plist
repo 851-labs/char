@@ -26,6 +26,8 @@
   <string>NSApplication</string>
   <key>SUFeedURL</key>
   <string>https://github.com/851-labs/char/releases/latest/download/appcast.xml</string>
+  <key>SUEnableInstallerLauncherService</key>
+  <true/>
   <key>SUPublicEDKey</key>
   <string>csUeIYVMDqMX5qihXjjy8ux3LBUFJ7FGnNLkxXMuo4o=</string>
 </dict>
