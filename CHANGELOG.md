@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.47 - 2026-01-23
+- chore: bump version to 1.0.47
+- fix: enforce app display name in build settings
+
 ## 1.0.46 - 2026-01-22
 - chore: bump version to 1.0.46
 - chore: update app display name to Char
