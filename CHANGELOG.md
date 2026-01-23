@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.58 - 2026-01-23
+- chore: release validation run
+
 ## 1.0.57 - 2026-01-22
 - fix: update app title casing
 
