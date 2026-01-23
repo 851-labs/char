@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.50 - 2026-01-23
+- chore: bump version to 1.0.50
+- fix: use renamed scheme in release workflow
+
 ## 1.0.49 - 2026-01-23
 - chore: bump version to 1.0.49
 - chore: align target product and scheme naming
