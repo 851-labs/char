@@ -1,9 +1,5 @@
 # Changelog
 
-## 1.0.53 - 2026-01-23
-- chore: bump version to 1.0.53
-- fix: set Developer ID signing for Release archives
-
 ## 1.0.52 - 2026-01-23
 - chore: bump version to 1.0.52
 - fix: align entitlements filename with target name
