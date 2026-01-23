@@ -153,15 +153,6 @@ appdrop release --no-notarize
 
 If Sparkle reports installer or updater errors, ensure the app was built via the archive/export flow (appdrop does this by default). Avoid manually re-signing Sparkle helpers.
 
-If updates still fail, clear Sparkle caches and reinstall once:
-
-```
-rm -rf ~/Library/Caches/so.alexandru.char/org.sparkle-project.Sparkle
-rm -rf ~/Library/Caches/so.alexandru.char/org.sparkle-project.Sparkle.*
-sudo rm -rf ~/Library/Containers/org.sparkle-project.Sparkle.Updater
-sudo rm -rf ~/Library/Containers/org.sparkle-project.InstallerLauncher
-```
-
 ## Sparkle Feed
 
 The appcast URL is:
