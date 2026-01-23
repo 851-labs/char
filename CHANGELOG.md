@@ -1,9 +1,5 @@
 # Changelog
 
-## 1.0.51 - 2026-01-23
-- chore: bump version to 1.0.51
-- fix: set explicit product name for appdrop
-
 ## 1.0.50 - 2026-01-23
 - chore: bump version to 1.0.50
 - fix: use renamed scheme in release workflow
