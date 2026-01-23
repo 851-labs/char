@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BC9B30A82E9C4961009237D0"
-               BuildableName = "char.app"
-               BlueprintName = "char"
+               BuildableName = "Char.app"
+               BlueprintName = "Char"
                ReferencedContainer = "container:char.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC9B30A82E9C4961009237D0"
-            BuildableName = "char.app"
-            BlueprintName = "char"
+            BuildableName = "Char.app"
+            BlueprintName = "Char"
             ReferencedContainer = "container:char.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BC9B30A82E9C4961009237D0"
-            BuildableName = "char.app"
-            BlueprintName = "char"
+            BuildableName = "Char.app"
+            BlueprintName = "Char"
             ReferencedContainer = "container:char.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

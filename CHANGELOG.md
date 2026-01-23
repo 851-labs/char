@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.57 - 2026-01-22
+- chore: bump version to 1.0.57
+- fix: update app title casing
+
 ## 1.0.16 - 2026-01-17
 - chore: bump version to 1.0.16
 - fix: add Sparkle network entitlements
