@@ -25,7 +25,7 @@
   <key>NSPrincipalClass</key>
   <string>NSApplication</string>
   <key>SUFeedURL</key>
-  <string>https://github.com/851-labs/Char/releases/latest/download/appcast.xml</string>
+  <string>https://github.com/851-labs/char/releases/latest/download/appcast.xml</string>
   <key>SUEnableInstallerLauncherService</key>
   <true/>
   <key>SUPublicEDKey</key>

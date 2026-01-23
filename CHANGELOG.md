@@ -1,10 +1,5 @@
 # Changelog
 
-## 1.0.49 - 2026-01-23
-- chore: bump version to 1.0.49
-- chore: align target product and scheme naming
-- chore: update Sparkle feed URL to new repo casing
-
 ## 1.0.47 - 2026-01-23
 - chore: bump version to 1.0.47
 - fix: enforce app display name in build settings
