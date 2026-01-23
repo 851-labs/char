@@ -1,7 +1,0 @@
-{
-  "name": "char",
-  "private": true,
-  "scripts": {
-    "release": "appdrop release"
-  }
-}
