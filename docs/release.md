@@ -43,6 +43,7 @@ Commit the version bump.
 ### 3) Update Changelog
 
 Add the release notes to `CHANGELOG.md` under a new version heading.
+Only include meaningful changes (features, fixes, docs). Do not add version-bump-only entries.
 
 To see commits since the previous tag:
 
