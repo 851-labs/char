@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.61 - 2026-01-26
+- chore: enable dead code stripping
+
 ## 1.0.60 - 2026-01-25
 - chore: remove SPARKLE_PRIVATE_KEY from setup-ci
 
