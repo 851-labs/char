@@ -53,7 +53,6 @@ brew install --cask 851-labs/tap/char
 - [Swift 6.2](https://www.swift.org/)
 - [SwiftUI](https://developer.apple.com/documentation/swiftui) - UI Framework
 - [Sparkle](https://sparkle-project.org/) - Software Update Framework
-- [Bun](https://bun.com/) - Scripts
 
 ## License
 
