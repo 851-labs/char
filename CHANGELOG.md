@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.63 - 2026-01-27
+- chore: re-release to resolve publish conflict
+
 ## 1.0.62 - 2026-01-27
 - feat: add AGENTS guide
 - docs: migrate release guide to skill
