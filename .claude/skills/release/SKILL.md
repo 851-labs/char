@@ -117,29 +117,15 @@ Required assets:
 
 ### Notarization Delays
 
-Notarization can take 10-45 minutes depending on Apple queue load. appdrop prints submission IDs, and you can query them:
+Notarization can take 10-45 minutes depending on Apple queue load. The CI logs show submission IDs.
 
+Query notarization status (requires API credentials):
 ```bash
 xcrun notarytool info <submission-id> \
   --key <AuthKey.p8> \
   --key-id <KEY_ID> \
   --issuer <ISSUER_ID> \
   --output-format json
-```
-
-Fetch the detailed log:
-
-```bash
-xcrun notarytool log <submission-id> \
-  --key <AuthKey.p8> \
-  --key-id <KEY_ID> \
-  --issuer <ISSUER_ID>
-```
-
-For faster local iteration, you can skip notarization:
-
-```bash
-appdrop release --no-notarize
 ```
 
 ## Sparkle Feed
