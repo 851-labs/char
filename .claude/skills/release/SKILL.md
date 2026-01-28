@@ -19,24 +19,6 @@ git status
 git branch --show-current
 ```
 
-Ensure these prerequisites are in place:
-- Developer ID Application certificate installed (Keychain Access)
-- App Store Connect API key created (Key ID, Issuer ID, `.p8`)
-- Sparkle private key available (from Keychain or `generate_keys`)
-- Homebrew tap repo: `851-labs/homebrew-tap`
-
-Create `.env` from `.env.example`:
-
-```bash
-DEVELOPER_ID_APPLICATION="Developer ID Application: Your Name (TEAMID)"
-APP_STORE_CONNECT_KEY_ID="YOUR_KEY_ID"
-APP_STORE_CONNECT_ISSUER_ID="YOUR_ISSUER_ID"
-APP_STORE_CONNECT_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
-SPARKLE_PRIVATE_KEY="BASE64_KEY_FROM_SPARKLE_KEYCHAIN_ITEM_WITH_PADDING"
-```
-
-appdrop automatically loads `.env` from the repo root.
-
 ## Step 1: Bump Version
 
 Update versions in `char.xcodeproj/project.pbxproj`:
