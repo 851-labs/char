@@ -128,7 +128,7 @@ xcrun notarytool info <submission-id> \
   --output-format json
 ```
 
-## Sparkle Feed
+### Sparkle Feed
 
 The appcast URL for automatic updates:
 
